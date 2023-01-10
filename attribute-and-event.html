@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Javascript</title>
+    <style>
+        .red{
+            border-radius: 50%;
+            background-color: red;
+        }
+        .black{
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Learn DOM Javascript</h1>
+    <img onclick="change()" src="src/gambar.jpg" width="300" id="pict" class="black" alt="Picture">
+    <input type="text" value="name" id="input">
+    <input type="submit" id="submit">
+    The name is <span id="p1"></span>
+
+    </p>
+    <script>    
+        var img = document.getElementById('pict');
+        img.width = 100;
+
+        // img.setAttribute('what','value');
+        // img.setAttribute('class','red');
+        img.className += ' red';
+
+        var input = document.getElementById('input');
+        input.value = "Full Name";
+
+        input.style.border = '3px solid blue';
+
+        
+        input.style.color = 'white';
+        
+        
+        // event 
+        function change() {
+            img.style.borderRadius = '0'
+        }
+        input.onclick = change;
+        
+        function change2() {
+            input.style.backgroundColor = 'gray';
+        }
+
+        input.onclick = function(){change2()};
+            function change2() {
+                input.style.backgroundColor = 'white';
+                input.style.color = 'black'
+            };
+        
+        input.addEventListener('click',function(change2) {
+            
+        });
+
+        input.addEventListener('mouseenter',function () {
+            input.style.backgroundColor = "white";
+        });
+        input.addEventListener('mouseleave',change2
+        );
+
+
+    // Try Event 
+
+
+    var submit = document.getElementById('submit');
+    var span = document.getElementById('p1');
+    
+    submit.onclick = function () {
+        var text = input.value;
+        span.innerHTML = text;
+    };
+    </script>
+</body>
+</html>
